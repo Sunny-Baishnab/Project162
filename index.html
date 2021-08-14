@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = 'https://aframe.io/releases/1.2.0/aframe.min.js'></script>
+        <script src = 'https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js'></script>
+        <script src = 'https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js'></script>
+        <script src = 'ball.js'></script>
+    </head>
+    <body>
+        <a-scene id = 'scene' background = 'color:black'>
+            <a-assets>
+                <a-asset-item id = 'pins' src = './assets/bowling-pins/scene.gltf'></a-asset-item>
+            </a-assets>
+
+            <a-entity light = 'type:ambient; color:white; intensity:1'></a-entity>
+
+            <a-entity id = 'camera' camera position = '0 5 20' wasd-controls look-controls = 'pointerLockEnabled:false'>
+                <a-cursor></a-cursor>
+            </a-entity>
+
+            <a-entity balls></a-entity>
+
+            <a-plane id = 'ground' width = '70' height = '100' position  = '0 1 0'  rotation = '-90 0 0' src = './assets/floor.jpg' visible = 'true'
+            repeat = '5 5' static-body></a-plane>  
+            
+            <a-plane position = '0 25 -50' width = '70' height = '50' src = './assets/bowling-alley.jpg' visible = 'true'></a-plane>
+
+            <a-cylinder color="crimson" height="100" radius="3" position = '-30 4 0' rotation = '-90 0 0'></a-cylinder>
+            <a-cylinder color="crimson" height="100" radius="3" position = '30 4 0' rotation = '-90 0 0'></a-cylinder>
+
+            <!--first row-->
+            <a-entity id = 'pins1' gltf-model = '#pins' position = '0 1 -8' scale = '20 20 20' dynamic-body></a-entity>
+            
+            <!--second row-->
+            <a-entity id = 'pins2' gltf-model = '#pins' position = '-1.5 1 -10' scale = '20 20 20' dynamic-body></a-entity>
+            <a-entity id = 'pins3' gltf-model = '#pins' position = '1.5 1 -10' scale = '20 20 20' dynamic-body></a-entity>
+            
+            <!--third row-->
+            <a-entity id = 'pins4' gltf-model = '#pins' position = '0 1 -12' scale = '20 20 20' dynamic-body></a-entity>
+            <a-entity id = 'pins5' gltf-model = '#pins' position = '-2.5 1 -12' scale = '20 20 20' dynamic-body></a-entity>
+            <a-entity id = 'pins6' gltf-model = '#pins' position = '2.5 1 -12' scale = '20 20 20' dynamic-body></a-entity>
+
+            <!--fourth row-->
+            <a-entity id = 'pins7' gltf-model = '#pins' position = '-1.5 1 -14' scale = '20 20 20' dynamic-body></a-entity>
+            <a-entity id = 'pins8' gltf-model = '#pins' position = '1.5 1 -14' scale = '20 20 20' dynamic-body></a-entity>
+            <a-entity id = 'pins9' gltf-model = '#pins' position = '-3.5 1 -14' scale = '20 20 20' dynamic-body></a-entity>
+            <a-entity id = 'pins10' gltf-model = '#pins' position = '3.5 1 -14' scale = '20 20 20' dynamic-body></a-entity>
+
+            <!--fifth row-->
+            <a-entity id = 'pins11' gltf-model = '#pins' position = '0 1 -16' scale = '20 20 20' dynamic-body></a-entity>
+            <a-entity id = 'pins12' gltf-model = '#pins' position = '-2.5 1 -16' scale = '20 20 20' dynamic-body></a-entity>
+            <a-entity id = 'pins13' gltf-model = '#pins' position = '2.5 1 -16' scale = '20 20 20' dynamic-body></a-entity>
+            <a-entity id = 'pins14' gltf-model = '#pins' position = '-4.5 1 -16' scale = '20 20 20' dynamic-body></a-entity>
+            <a-entity id = 'pins15' gltf-model = '#pins' position = '4.5 1 -16' scale = '20 20 20' dynamic-body></a-entity>
+        </a-scene>
+    </body>
+</html>
